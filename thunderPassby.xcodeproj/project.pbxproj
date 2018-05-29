@@ -11,6 +11,7 @@
 		CE3F8A0220BD6CC7007011F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F8A0120BD6CC7007011F2 /* ViewController.swift */; };
 		CE3F8A0420BD6CCA007011F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE3F8A0320BD6CCA007011F2 /* Assets.xcassets */; };
 		CE3F8A0720BD6CCA007011F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE3F8A0520BD6CCA007011F2 /* Main.storyboard */; };
+		CE3F8A1020BD6FAE007011F2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F8A0F20BD6FAE007011F2 /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		CE3F8A0620BD6CCA007011F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE3F8A0820BD6CCA007011F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE3F8A0920BD6CCA007011F2 /* thunderPassby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = thunderPassby.entitlements; sourceTree = "<group>"; };
+		CE3F8A0F20BD6FAE007011F2 /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				CE3F8A0520BD6CCA007011F2 /* Main.storyboard */,
 				CE3F8A0820BD6CCA007011F2 /* Info.plist */,
 				CE3F8A0920BD6CCA007011F2 /* thunderPassby.entitlements */,
+				CE3F8A0F20BD6FAE007011F2 /* WindowController.swift */,
 			);
 			path = thunderPassby;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3F8A0220BD6CC7007011F2 /* ViewController.swift in Sources */,
+				CE3F8A1020BD6FAE007011F2 /* WindowController.swift in Sources */,
 				CE3F8A0020BD6CC7007011F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,6 +282,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = zhihao.fudan.thunderPassby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -297,6 +302,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = zhihao.fudan.thunderPassby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
