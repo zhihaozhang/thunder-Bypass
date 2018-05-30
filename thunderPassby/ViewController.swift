@@ -18,7 +18,12 @@ class ViewController: NSViewController {
         let thunderURL = thunderURLFiled.stringValue
         if thunderURL.hasPrefix("thunder://") {
             let encryptedURL = thunderURL.substring(from: thunderURL.index(thunderURL.startIndex,offsetBy :10))
-            print(encryptedURL)
+            
+            let decryptedURL1 = Base64FS.decodeString(str: encryptedURL).substring(from: thunderURL.index(thunderURL.startIndex,offsetBy :2))
+            
+            let decryptedURL2 = decryptedURL1.substring(to: decryptedURL1.index(decryptedURL1.endIndex,offsetBy :-2))
+            
+            decryptedURL.stringValue = decryptedURL2
             
         }
         
