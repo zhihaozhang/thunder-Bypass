@@ -1,6 +1,6 @@
 # thunder-Bypass
 
-破解并获得以thunder:// 开头的迅雷下载地址背后的真实下载地址，并自动复制到您的剪切板，您可以用非迅雷的第三方下载软件进行下载。
+破解并获得以thunder:// 开头的迅雷下载地址背后的真实下载地址，自动复制到您的剪切板，您可以用非迅雷的第三方下载软件另行下载。
 
 Get the real dwnload url from encrypted thunder url which starts with thunder://
 
