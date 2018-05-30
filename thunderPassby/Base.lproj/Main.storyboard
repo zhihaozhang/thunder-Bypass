@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -740,6 +739,9 @@
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="decryptButtonClicked:" target="XfG-lQ-9wD" id="cz1-OF-1Mp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <constraints>
@@ -753,6 +755,10 @@
                             <constraint firstItem="fl4-QO-KKU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="16" id="jB2-5I-QpH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="decryptedURL" destination="puU-jI-G9T" id="36R-gL-dWK"/>
+                        <outlet property="thunderURLFiled" destination="fl4-QO-KKU" id="orb-gf-JeY"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
