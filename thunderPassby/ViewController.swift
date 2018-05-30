@@ -25,6 +25,13 @@ class ViewController: NSViewController {
             
             decryptedURL.stringValue = decryptedURL2
             
+            // copy decrypted URL automaticly for users
+            let pasteboard = NSPasteboard.general
+            pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+            pasteboard.setString(decryptedURL2, forType: NSPasteboard.PasteboardType.string)
+          
+       
+            
         } else{
             
             let alert = NSAlert()
