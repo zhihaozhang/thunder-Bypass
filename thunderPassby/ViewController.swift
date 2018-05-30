@@ -19,31 +19,48 @@ class ViewController: NSViewController,NSUserNotificationCenterDelegate {
         if thunderURL.hasPrefix("thunder://") {
             let encryptedURL = thunderURL.substring(from: thunderURL.index(thunderURL.startIndex,offsetBy :10))
             
-            let decryptedURL1 = Base64FS.decodeString(str: encryptedURL).substring(from: thunderURL.index(thunderURL.startIndex,offsetBy :2))
             
-            let decryptedURL2 = decryptedURL1.substring(to: decryptedURL1.index(decryptedURL1.endIndex,offsetBy :-2))
+            let decryptedURL0 = Base64FS.decodeString(str: encryptedURL)
             
-            decryptedURL.stringValue = decryptedURL2
+            if decryptedURL0.count > 0{
+                
+                let decryptedURL1 = decryptedURL0.substring(from: thunderURL.index(thunderURL.startIndex,offsetBy :2))
             
-            // copy decrypted URL automaticly for users
-            let pasteboard = NSPasteboard.general
-            pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-            pasteboard.setString(decryptedURL2, forType: NSPasteboard.PasteboardType.string)
-            
-            let userNotification = NSUserNotification()
-            userNotification.title = "Message"
-            userNotification.subtitle = "恭喜成功破解迅雷下载地址"
-            userNotification.informativeText = "提示:地址已帮您复制到剪切板"
-            // 使用NSUserNotificationCenter发送NSUserNotification
-            let userNotificationCenter = NSUserNotificationCenter.default
-           
-           
-           userNotificationCenter.delegate = self
-            
-         userNotificationCenter.scheduleNotification(userNotification)
-            
-          
-       
+                let decryptedURL2 = decryptedURL1.substring(to: decryptedURL1.index(decryptedURL1.endIndex,offsetBy :-2))
+                
+                decryptedURL.stringValue = decryptedURL2
+                
+                // copy decrypted URL automaticly for users
+                let pasteboard = NSPasteboard.general
+                pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
+                pasteboard.setString(decryptedURL2, forType: NSPasteboard.PasteboardType.string)
+                
+                let userNotification = NSUserNotification()
+                userNotification.title = "Message"
+                userNotification.subtitle = "恭喜成功破解迅雷下载地址"
+                userNotification.informativeText = "提示:地址已帮您复制到剪切板"
+                // 使用NSUserNotificationCenter发送NSUserNotification
+                let userNotificationCenter = NSUserNotificationCenter.default
+               
+               
+                userNotificationCenter.delegate = self
+                
+                userNotificationCenter.scheduleNotification(userNotification)
+            }else{
+                let userNotification = NSUserNotification()
+                userNotification.title = "Message"
+                userNotification.subtitle = "解码失败"
+                userNotification.informativeText = "请输入正确的迅雷下载地址"
+                // 使用NSUserNotificationCenter发送NSUserNotification
+                let userNotificationCenter = NSUserNotificationCenter.default
+                
+                
+                userNotificationCenter.delegate = self
+                
+                userNotificationCenter.scheduleNotification(userNotification)
+                
+                thunderURLFiled.stringValue = ""
+            }
             
         } else{
             
@@ -56,10 +73,9 @@ class ViewController: NSViewController,NSUserNotificationCenterDelegate {
             
             alert.alertStyle = .informational
         
-            
             alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
             
-            
+            thunderURLFiled.stringValue = ""
         }
         
     }

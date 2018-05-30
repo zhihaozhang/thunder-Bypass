@@ -220,6 +220,11 @@ public class Base64FS {
         for i in stride(from: 0, to: size, by: 4) {
             
             // Get the 4 letters, then get back to their non-index values
+            if data[i] > safeAlphabetToIndex.count || data[i+1] > safeAlphabetToIndex.count || data[i+2] > safeAlphabetToIndex.count || data[i+3] > safeAlphabetToIndex.count{
+                let resultError: [UInt8] = []
+                return resultError
+            }
+            
             let first = safeAlphabetToIndex[data[i]]!
             let second = safeAlphabetToIndex[data[i + 1]]!
             let third = safeAlphabetToIndex[data[i + 2]]!
