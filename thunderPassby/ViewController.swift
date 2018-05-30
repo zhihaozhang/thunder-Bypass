@@ -24,7 +24,7 @@ class ViewController: NSViewController,NSUserNotificationCenterDelegate {
             
             if decryptedURL0.count > 0{
                 
-                let decryptedURL1 = decryptedURL0.substring(from: thunderURL.index(thunderURL.startIndex,offsetBy :2))
+                let decryptedURL1 = decryptedURL0.substring(from: decryptedURL0.index(decryptedURL0.startIndex,offsetBy :2))
             
                 let decryptedURL2 = decryptedURL1.substring(to: decryptedURL1.index(decryptedURL1.endIndex,offsetBy :-2))
                 
