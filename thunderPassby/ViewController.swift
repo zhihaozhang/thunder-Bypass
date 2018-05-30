@@ -25,6 +25,21 @@ class ViewController: NSViewController {
             
             decryptedURL.stringValue = decryptedURL2
             
+        } else{
+            
+            let alert = NSAlert()
+            alert.addButton(withTitle: "OK")
+            
+            alert.messageText = "Alert"
+            
+            alert.informativeText = "please input correct thunder download url which hasPrefix thunder://"
+            
+            alert.alertStyle = .informational
+        
+            
+            alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
+            
+            
         }
         
     }
