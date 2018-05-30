@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController,NSUserNotificationCenterDelegate {
 
     @IBOutlet weak var thunderURLFiled: NSTextField!
     
@@ -29,6 +29,19 @@ class ViewController: NSViewController {
             let pasteboard = NSPasteboard.general
             pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
             pasteboard.setString(decryptedURL2, forType: NSPasteboard.PasteboardType.string)
+            
+            let userNotification = NSUserNotification()
+            userNotification.title = "Message"
+            userNotification.subtitle = "恭喜成功破解迅雷下载地址"
+            userNotification.informativeText = "提示:地址已帮您复制到剪切板"
+            // 使用NSUserNotificationCenter发送NSUserNotification
+            let userNotificationCenter = NSUserNotificationCenter.default
+           
+           
+           userNotificationCenter.delegate = self
+            
+         userNotificationCenter.scheduleNotification(userNotification)
+            
           
        
             
@@ -61,6 +74,10 @@ class ViewController: NSViewController {
         didSet {
         // Update the view, if already loaded.
         }
+    }
+    
+    func userNotificationCenter(_ center: NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
+        return true
     }
 
 
