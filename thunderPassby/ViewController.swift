@@ -22,6 +22,8 @@ class ViewController: NSViewController,NSUserNotificationCenterDelegate {
             
             let decryptedURL0 = Base64FS.decodeString(str: encryptedURL)
             
+            print(decryptedURL0)
+            
             if decryptedURL0.count > 0{
                 
                 let decryptedURL1 = decryptedURL0.substring(from: decryptedURL0.index(decryptedURL0.startIndex,offsetBy :2))
