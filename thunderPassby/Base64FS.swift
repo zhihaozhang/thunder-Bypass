@@ -221,10 +221,17 @@ public class Base64FS {
             
             // Get the 4 letters, then get back to their non-index values
             
+            if safeAlphabetToIndex[data[i]] == nil || safeAlphabetToIndex[data[i+1]] == nil || safeAlphabetToIndex[data[i+2]] == nil || safeAlphabetToIndex[data[i+3]] == nil{
+                let resultError: [UInt8] = []
+                return resultError
+            }
+            
             let first = safeAlphabetToIndex[data[i]]!
             let second = safeAlphabetToIndex[data[i + 1]]!
             let third = safeAlphabetToIndex[data[i + 2]]!
             let forth = safeAlphabetToIndex[data[i + 3]]!
+            
+           
             
             // Get the 3 binary letters from the four 6-bit ones
             let l1 = first << 2 | ((second & 0b110000) >> 4)
