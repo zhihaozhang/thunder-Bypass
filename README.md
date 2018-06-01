@@ -10,7 +10,7 @@ Get the real dwnload url from encrypted thunder url which starts with thunder://
 
 ### 通知中心视图:
 
-![](![](https://ws3.sinaimg.cn/large/006tNc79ly1frvhqibpksj30is0gijtb.jpg))
+![](https://ws3.sinaimg.cn/large/006tNc79ly1frvhqibpksj30is0gijtb.jpg)
 
 
 ### icon
