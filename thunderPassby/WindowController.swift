@@ -13,12 +13,18 @@ class WindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
     
-        let customToolbar = NSToolbar()
-        customToolbar.showsBaselineSeparator = false
+        if #available(OSX 10.13, *) {
+            let customToolbar = NSToolbar()
+            customToolbar.showsBaselineSeparator = false
+            window?.toolbar = customToolbar
+        } else {
+            // Fallback on earlier versions
+        }
+        
         window?.titlebarAppearsTransparent = true
         window?.titleVisibility = .hidden
         window?.backgroundColor = .gray
-        window?.toolbar = customToolbar
+        
         
         
         
